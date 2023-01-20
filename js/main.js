@@ -156,8 +156,8 @@ var yidong=function(){
 //    document.getElementsByTagName('img')[0]..style.top=selfplanY-selfplan.plansizeY/2+"px";
     var endTouchY = 0;
     var endTouchX = 0;
-    ourPlan.addEventListener('touchstart',function(ev){
-        this.addEventListener('touchmove', function(ev){
+    ourPlan.addEventListener('mousedown',function(ev){
+        this.addEventListener('mousemove', function(ev){
             ev.preventDefault();
             var ev = ev.touches[0];
             ourPlan.style.top = (ev.pageY-41)+'px';
@@ -165,7 +165,7 @@ var yidong=function(){
             endTouchX = ev.pageX;
             endTouchY = ev.pageY;
         },false);
-        this.addEventListener('touchend', function(ev){
+        this.addEventListener('mouseup', function(ev){
             this.ontouchmove = null;
             this.ontouchend = null;
             var x;
